@@ -18,4 +18,5 @@ public class User {
     private String fullName;
     private String identificationNumber;
     private String identificationType;
+    private Double availableBalance;
 }

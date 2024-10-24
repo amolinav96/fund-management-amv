@@ -17,6 +17,7 @@ public enum ErrorEnum {
     VALIDATE_ARGUMENTS("Validate subscriptionId - TransactionType not found"),
     UNEXPECTED("Unexpected error"),
     VALIDATE_SUBSCRIPTION("Debes ingresar la subscripcion que deseas cancelar"),
+    INSUFFICIENT_FUND("El valor ingresado es superior al saldo disponible del usuario"),
     ALL_TRANSACTION("The user has no transaction");
 
     private String message;

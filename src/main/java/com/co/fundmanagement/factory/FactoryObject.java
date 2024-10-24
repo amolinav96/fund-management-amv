@@ -2,22 +2,29 @@ package com.co.fundmanagement.factory;
 
 import com.co.fundmanagement.dto.RequestTransaction;
 import com.co.fundmanagement.enums.SubscriptionStatusEnum;
-import com.co.fundmanagement.model.Fund;
-import com.co.fundmanagement.model.Response;
-import com.co.fundmanagement.model.Subscription;
-import com.co.fundmanagement.model.Transaction;
+import com.co.fundmanagement.model.*;
 
 import java.util.Date;
 
 public class FactoryObject {
 
-    public static Fund createFund(Fund fund, Double balance){
+    public static Fund updateFund(Fund fund, Double balance){
         return Fund.builder()
                 .id(fund.getId())
                 .name(fund.getName())
                 .description(fund.getDescription())
                 .minInitialValue(fund.getMinInitialValue())
                 .balance(balance)
+                .build();
+    }
+
+    public static User updateUser( User user, Double balance){
+        return User.builder()
+                .id(user.getId())
+                .identificationType(user.getIdentificationType())
+                .identificationNumber(user.getIdentificationNumber())
+                .fullName(user.getFullName())
+                .availableBalance(balance)
                 .build();
     }
 
