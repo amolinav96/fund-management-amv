@@ -42,13 +42,11 @@ public class FundService implements IFundService {
                         .name(request.getName())
                         .description(request.getDescription())
                         .minInitialValue(request.getMinInitialValue())
-                        .balance(requestFund.getBalance())
                         .build())
                 .switchIfEmpty(Mono.just(Fund.builder()
                         .name(request.getName())
                         .description(request.getDescription())
                         .minInitialValue(request.getMinInitialValue())
-                        .balance(0.0)
                         .build()))
                 .flatMap(fund -> fundRepository.save(fund))
                 .map(fund -> createResponse(fund, CREATE_FUND.getMessage()));

@@ -5,7 +5,7 @@ _Edición: 2024_
 ## Planteamiento
 Se plantea crear un microservicio reactivo debido a que Fund Management AMV es un sistema que tendra altos niveles de concurrencia y escalabilidad, para esto decidimos utilizar springboot como framework principal y utilizar webflux como la libreria que nos permite crear flujos asincronos, de esta manera tendremos nuestra aplicacion reactiva, luego utilizamos una base de datos de Mongodb (ReactiveMongoRepository) al extender de esta clase garantizamos el flujo completo de nuestras transacciones asincronas permitiendo asi que desde las consultas a bases de datos recibamos flujos reactivos.
 
-Tambien se plantea utilizar MVC como arquitectura base para crear (Controllers, models, resposity, services), implementar swagger para la documentacion de las apis y realizar pruebas unitarias utilizando JUnit 5  garantizando un 90% de la covertura de las pruebas, a nivel de servicios, objetos y servicios.
+Tambien se plantea utilizar MVC como arquitectura base para crear (Controllers, models, resposity, services), implementar swagger para la documentacion de las apis y realizar pruebas unitarias utilizando JUnit 5  garantizando un 80% de la covertura de las pruebas, a nivel de servicios, objetos y servicios.
 
 A nivel de seguridad se plantea utilizar JWT Spring security.
 

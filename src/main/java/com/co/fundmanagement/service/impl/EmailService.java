@@ -8,6 +8,9 @@ import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Mono;
 
+import static com.co.fundmanagement.enums.MessageEnum.MESSAGE_SEND_EMAIL;
+import static com.co.fundmanagement.enums.MessageEnum.SUBJECT;
+
 @Service
 public class EmailService implements IEmailService {
 
@@ -18,12 +21,12 @@ public class EmailService implements IEmailService {
     private JavaMailSender mailSender;
 
     @Override
-    public Mono<Void> sendEmail(String toUser, String subject, String message) {
+    public Mono<Void> sendEmail(String toUser) {
         SimpleMailMessage mailMessage = new SimpleMailMessage();
         mailMessage.setFrom(emailUser);
         mailMessage.setTo(toUser);
-        mailMessage.setSubject(subject);
-        mailMessage.setText(message);
+        mailMessage.setSubject(SUBJECT.getMessage());
+        mailMessage.setText(MESSAGE_SEND_EMAIL.getMessage());
 
         mailSender.send(mailMessage);
         return Mono.empty();

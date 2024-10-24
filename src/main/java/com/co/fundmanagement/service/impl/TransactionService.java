@@ -86,7 +86,7 @@ public class TransactionService implements ITransactionService {
                 .flatMap(updateUser -> userRepository.save(updateUser))
                 .map(fundSaved -> createSubscription(request))
                 .flatMap(subscriptionSave -> subscriptionRepository.save(subscriptionSave)
-                        .flatMap(subs -> emailService.sendEmail("amvelasquez9621@gmail.com","Suscripcion exitosa","Se ha suscrito al fondo"))
+                        .flatMap(subs -> emailService.sendEmail(user.getEmail()))
                         .thenReturn(subscriptionSave))
                 .map(subscriptionSaved -> createTransactionObject(subscriptionSaved, request))
                 .flatMap(transaction -> transactionRepository.save(transaction))

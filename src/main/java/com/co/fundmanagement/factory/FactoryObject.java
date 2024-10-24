@@ -14,7 +14,6 @@ public class FactoryObject {
                 .name(fund.getName())
                 .description(fund.getDescription())
                 .minInitialValue(fund.getMinInitialValue())
-                .balance(balance)
                 .build();
     }
 
