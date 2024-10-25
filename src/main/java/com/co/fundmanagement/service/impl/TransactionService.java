@@ -59,10 +59,10 @@ public class TransactionService implements ITransactionService {
                 .switchIfEmpty(Mono.error(new FundNotFoundException(FUND_NOT_FOUND.getMessage())))
                 .flatMap(fund -> OPENING.name().equals(request.getTransactionType()) ?
                         handleOpeningTransaction(request, fund, user) :
-                        handleCancellationTransaction(request, subscription, fund, user));
+                        handleCancellationTransaction(request, subscription, user));
     }
 
-    private Mono<Response> handleCancellationTransaction(RequestTransaction request, Subscription subscription, Fund fund, User user) {
+    private Mono<Response> handleCancellationTransaction(RequestTransaction request, Subscription subscription, User user) {
         return CANCELLATION.name().equals(request.getTransactionType()) ?
                 Mono.just(updateSubscription(subscription))
                         .flatMap(subscriptionSave -> subscriptionRepository.save(subscriptionSave)
