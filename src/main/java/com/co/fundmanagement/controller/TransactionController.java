@@ -14,6 +14,7 @@ import reactor.core.publisher.Mono;
 @RestController
 @RequestMapping("/transaction")
 @Tag(name = "Transaction", description = "Operaciones relacionadas con las transacciones")
+@CrossOrigin(origins = "http://localhost:4200")
 public class TransactionController {
 
     @Autowired

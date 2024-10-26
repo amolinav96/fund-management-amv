@@ -18,6 +18,7 @@ import reactor.core.publisher.Mono;
 import java.util.Objects;
 
 import static com.co.fundmanagement.enums.ErrorEnum.*;
+import static com.co.fundmanagement.enums.MessageEnum.SUBSCRIPTION_CANCELLED;
 import static com.co.fundmanagement.enums.MessageEnum.SUBSCRIPTION_OPENING;
 import static com.co.fundmanagement.enums.SubscriptionStatusEnum.ACTIVE;
 import static com.co.fundmanagement.enums.TransactionTypeEnum.CANCELLATION;
@@ -70,7 +71,7 @@ public class TransactionService implements ITransactionService {
                                 .flatMap(updateUser -> userRepository.save(updateUser))
                                 .map(transaction -> createTransactionObject(subscription, request))
                                 .flatMap(transaction -> transactionRepository.save(transaction)))
-                        .map(transaction -> createResponse(transaction, SUBSCRIPTION_OPENING.getMessage())) :
+                        .map(transaction -> createResponse(transaction, SUBSCRIPTION_CANCELLED.getMessage())) :
 
                 Mono.error(new ValidateArgumentsException(VALIDATE_ARGUMENTS.getMessage()));
     }

@@ -24,6 +24,7 @@ public class FactoryObject {
                 .identificationNumber(user.getIdentificationNumber())
                 .fullName(user.getFullName())
                 .availableBalance(balance)
+                .email(user.getEmail())
                 .build();
     }
 
