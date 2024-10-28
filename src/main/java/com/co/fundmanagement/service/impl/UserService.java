@@ -1,6 +1,6 @@
 package com.co.fundmanagement.service.impl;
 
-import com.co.fundmanagement.exception.FundNotFoundException;
+import com.co.fundmanagement.exception.UserNotFoundException;
 import com.co.fundmanagement.model.User;
 import com.co.fundmanagement.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +17,6 @@ public class UserService {
 
     public Mono<User> findById(String id){
         return userRepository.findById(id)
-                .switchIfEmpty(Mono.error(new FundNotFoundException(USER_NOT_FOUND.getMessage())));
+                .switchIfEmpty(Mono.error(new UserNotFoundException(USER_NOT_FOUND.getMessage())));
     }
 }

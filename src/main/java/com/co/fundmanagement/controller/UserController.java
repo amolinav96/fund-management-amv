@@ -8,7 +8,7 @@ import reactor.core.publisher.Mono;
 
 @RestController
 @RequestMapping("/user")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "*")
 public class UserController {
 
     @Autowired

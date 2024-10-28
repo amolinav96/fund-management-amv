@@ -11,7 +11,7 @@ import reactor.core.publisher.Flux;
 
 @RestController
 @RequestMapping("/subscription")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "*")
 public class SubscriptionController {
 
     @Autowired

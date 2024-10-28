@@ -13,7 +13,7 @@ import reactor.core.publisher.Mono;
 @RestController
 @RequestMapping("/fund")
 @Tag(name = "Fund", description = "Operaciones relacionadas con los fondos")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "*")
 public class FundController {
 
     @Autowired

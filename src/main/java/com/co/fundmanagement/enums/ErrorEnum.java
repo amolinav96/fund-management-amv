@@ -13,7 +13,7 @@ public enum ErrorEnum {
     SUBSCRIPTION_NOT_FOUND("No subscription found, creating a new one"),
     ACTIVE_SUBSCRIPTION("Ya tienes una subscripcion activa con este fondo"),
     INACTIVE_SUBSCRIPTION("No existe la subscripcion, se encuentra inactiva o no es de su propiedad"),
-    MIN_VALUE("No tiene saldo disponible para vincularse al fondo "),
+    MIN_VALUE("El valor ingresado es inferior al valor inicial de vinculacion al fondo"),
     VALIDATE_ARGUMENTS("Validate subscriptionId - TransactionType not found"),
     UNEXPECTED("Unexpected error"),
     VALIDATE_SUBSCRIPTION("Debes ingresar la subscripcion que deseas cancelar"),

@@ -1,6 +1,6 @@
 package com.co.fundmanagement.service.impl;
 
-import com.co.fundmanagement.exception.FundNotFoundException;
+import com.co.fundmanagement.exception.SubscriptionException;
 import com.co.fundmanagement.model.Subscription;
 import com.co.fundmanagement.repository.SubscriptionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +18,6 @@ public class SubscriptionService {
 
     public Flux<Subscription> findAllByUserId(String userId) {
         return subscriptionRepository.findAllByUserId(userId)
-                .switchIfEmpty(Mono.error(new FundNotFoundException(SUBSCRIPTION_NOT_FOUND.getMessage())));
+                .switchIfEmpty(Mono.error(new SubscriptionException(SUBSCRIPTION_NOT_FOUND.getMessage())));
     }
 }
